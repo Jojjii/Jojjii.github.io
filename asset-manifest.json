@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/TheExtractors/static/css/main.e6c13ad2.css",
-    "main.js": "/TheExtractors/static/js/main.034f1e84.js",
-    "static/js/787.28cb0dcd.chunk.js": "/TheExtractors/static/js/787.28cb0dcd.chunk.js",
-    "index.html": "/TheExtractors/index.html",
-    "main.e6c13ad2.css.map": "/TheExtractors/static/css/main.e6c13ad2.css.map",
-    "main.034f1e84.js.map": "/TheExtractors/static/js/main.034f1e84.js.map",
-    "787.28cb0dcd.chunk.js.map": "/TheExtractors/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/static/css/main.e6c13ad2.css",
+    "main.js": "/static/js/main.01fd2a18.js",
+    "static/js/787.28cb0dcd.chunk.js": "/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/index.html",
+    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
+    "main.01fd2a18.js.map": "/static/js/main.01fd2a18.js.map",
+    "787.28cb0dcd.chunk.js.map": "/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.034f1e84.js"
+    "static/js/main.01fd2a18.js"
   ]
 }
