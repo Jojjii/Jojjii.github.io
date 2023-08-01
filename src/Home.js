@@ -11,9 +11,9 @@ export default function Home(props) {
     const [prev2, setprev2] = useState(" ");
 
     const extractEmails = () => {
-        var regex = /([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+.com)/gi;
+        var regex = /([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+.[a-zA-Z]+)/gi;
 
-        let emails = text.match(regex);         //extracting valid emails list (only ones ending in .com tho)
+        let emails = text.match(regex);         //extracting valid emails list
 
         if (emails === null) {
 
@@ -74,7 +74,8 @@ export default function Home(props) {
     }
 
     const format = () => {
-
+        
+        if(text==="" || text===null){return;}   
 
         let regex2 = /\s+/g;
 
@@ -124,8 +125,8 @@ export default function Home(props) {
 
     const extractPhoneNumbers = () => {
 
-        let regex = /(\+[0-9]+)/g
-        let phoneNumbers = text.match(regex);         //extracting valid emails list (only ones ending in .com tho)
+        let regex = /([0-9]+)/g
+        let phoneNumbers = text.match(regex);         //extracting phone numbers (no validation checks, use multiple regex's for more validation checks)
 
         if (phoneNumbers === null) {
 
@@ -188,7 +189,8 @@ export default function Home(props) {
                 <h3 style={{ marginLeft: "25%", marginTop: "2%" }}>Enter Your Text Here: </h3>
                 <textarea className="form-control my-3" value={text} onChange={updatetext} id="exampleFormControlTextarea1" rows="8" style={{ display: "block", marginLeft: "auto", marginRight: "auto", width: "50%", backgroundColor: props.mode==="light" ? "white" : "grey"}}></textarea>
                 <div className="my-5" style={{ display: "inline-block", marginLeft: "25%" }}>
-                    <button type="button" style={{ marginInline: "auto", width: "200px", border: "2px solid black", borderRadius: "5px" }} className="btn btn-outline-success btn-md mx-3" title="Click here to convert the text in essay format" onClick={format}>Format Text</button>
+                
+                    <button type="button" style={{ marginInline: "auto", width: "200px", border: "2px solid black", borderRadius: "5px" }} className="btn btn-outline-success btn-md mx-3" title='Format Text: Removes Extra Spaces, and Makes First letter of every sentence capital and rest small' onClick={format}>Format Text</button>
                     <button type="button" style={{ marginInline: "auto", width: "200px", border: "2px solid black", borderRadius: "5px" }} className="btn btn-outline-success btn-md mx-3" title="Extracts unique valid emails from text" onClick={extractEmails}>Extract Emails</button>
                     <button type="button" style={{ marginInline: "auto", width: "200px", border: "2px solid black", borderRadius: "5px" }} className="btn btn-outline-success btn-md mx-3" title="Extracts unique valid Phone Numbers fron text" onClick={extractPhoneNumbers}>Extract Phone Numbers</button>
                 </div>
