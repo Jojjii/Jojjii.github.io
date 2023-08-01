@@ -11,7 +11,11 @@ export default function Home(props) {
     const [prev2, setprev2] = useState(" ");
 
     const extractEmails = () => {
-        var regex = /([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+.[a-zA-Z]+)/gi;
+
+        setprev(" ");
+
+
+        var regex = /([a-zA-Z0-9._+-]+@[a-zA-Z0-9._-]+)/gi;
 
         let emails = text.match(regex);         //extracting valid emails list
 
@@ -50,11 +54,11 @@ export default function Home(props) {
 
 
 
-            var x = prev + "\n";
+            var x = " ";
             unique.forEach(element => {
 
                 if (!x.includes(element)) {
-                    x += element + "\n";
+                    x += " [ " + element + " ] ";
                 }
             });
 
@@ -125,6 +129,8 @@ export default function Home(props) {
 
     const extractPhoneNumbers = () => {
 
+        setprev2(" ");
+
         let regex = /([0-9]+)/g
         let phoneNumbers = text.match(regex);         //extracting phone numbers (no validation checks, use multiple regex's for more validation checks)
 
@@ -164,11 +170,12 @@ export default function Home(props) {
             }, 2000);
 
 
-            var x = prev2 + '\n';
+            var x = " ";
             unique.forEach(element => {
 
                 if (!x.includes(element)) {
-                    x += element + "\n";
+                    x += ' [ ' + element;
+                    x += ' ] '; 
                 }
             });
 
@@ -187,7 +194,7 @@ export default function Home(props) {
         <div style={{color: props.mode === "light" ? "black":"white"}} >
             <div className="mb-3 md-4">
                 <h3 style={{ marginLeft: "25%", marginTop: "2%" }}>Enter Your Text Here: </h3>
-                <textarea className="form-control my-3" value={text} onChange={updatetext} id="exampleFormControlTextarea1" rows="8" style={{ display: "block", marginLeft: "auto", marginRight: "auto", width: "50%", backgroundColor: props.mode==="light" ? "white" : "grey"}}></textarea>
+                <textarea className="form-control my-3" value={text} onChange={updatetext} id="exampleFormControlTextarea1" rows="8" style={{ display: "block", zIndex: "-1", padding:"2px", marginLeft: "auto", marginRight: "auto", width: "50%", backgroundColor: props.mode==="light" ? "white" : "lightgrey"}}></textarea>
                 <div className="my-5" style={{ display: "inline-block", marginLeft: "25%" }}>
                 
                     <button type="button" style={{ marginInline: "auto", width: "200px", border: "2px solid black", borderRadius: "5px" }} className="btn btn-outline-success btn-md mx-3" title='Format Text: Removes Extra Spaces, and Makes First letter of every sentence capital and rest small' onClick={format}>Format Text</button>
